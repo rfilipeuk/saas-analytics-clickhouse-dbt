@@ -1,6 +1,6 @@
 # SaaS Analytics with ClickHouse & dbt
 
-A hands-on portfolio project simulating a SaaS data stack using synthetic data, ClickHouse SQL, dbt, and Power BI.
+This project was built to simulate a real-world analytics environment. By generating a synthetic, yet realistic SaaS dataset using Python, the goal is to demonstrate an end-to-end data pipeline. It bridges the gap between raw event data and actionable business insights, showcasing advanced SQL optimizations in ClickHouse, structured data modeling in dbt, and high-level metric visualization in Power BI.
 
 ## 🎯 Project Goals
 
