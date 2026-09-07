@@ -43,7 +43,7 @@ saas-analytics-clickhouse-dbt/
 ├── powerbi/ # Power BI dashboard file
 ├── docker-compose.yml # Local ClickHouse setup
 ├── generate_data.py # Synthetic data generator
-└── load_data.py # Loads CSVs into ClickHouse
+└── load_data.py # Loads CSVs into ClickHouse 
 
 
 ## 🚀 Getting Started
