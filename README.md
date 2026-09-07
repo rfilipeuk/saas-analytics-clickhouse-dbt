@@ -35,7 +35,7 @@ Data is synthetic but designed to have realistic patterns baked in: funnel
 drop-off, churn correlated with engagement, and seasonal activity.
 
 ## 📁 Repository Structure
-
+'''
 saas-analytics-clickhouse-dbt/
 ├── data/              # Generated synthetic CSVs
 ├── sql/               # Exploratory & analytical SQL queries
@@ -44,7 +44,7 @@ saas-analytics-clickhouse-dbt/
 ├── docker-compose.yml # Local ClickHouse setup
 ├── generate_data.py   # Synthetic data generator
 └── load_data.py       # Loads CSVs into ClickHouse
-
+'''
 
 ## 🚀 Getting Started
 
