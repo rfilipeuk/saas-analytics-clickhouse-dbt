@@ -37,13 +37,13 @@ drop-off, churn correlated with engagement, and seasonal activity.
 ## 📁 Repository Structure
 
 saas-analytics-clickhouse-dbt/
-├── data/ # Generated synthetic CSVs
-├── sql/ # Exploratory & analytical SQL queries
-├── dbt/ # dbt project (staging + fact models)
-├── powerbi/ # Power BI dashboard file
+├── data/              # Generated synthetic CSVs
+├── sql/               # Exploratory & analytical SQL queries
+├── dbt/               # dbt project (staging + fact models)
+├── powerbi/           # Power BI dashboard file
 ├── docker-compose.yml # Local ClickHouse setup
-├── generate_data.py # Synthetic data generator
-└── load_data.py # Loads CSVs into ClickHouse 
+├── generate_data.py   # Synthetic data generator
+└── load_data.py       # Loads CSVs into ClickHouse
 
 
 ## 🚀 Getting Started
