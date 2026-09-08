@@ -20,12 +20,15 @@ def random_date(start, end):
 users = []
 for user_id in range(1, N_USERS + 1):
     signup_date = random_date(START_DATE, END_DATE)
-    plan = random.choices(PLANS, weights=[0.7, 0.25, 0.05]) [0]
+    plan = random.choices(PLANS, weights=[0.7, 0.25, 0.05])[0]
+    # A/B test: randomly assign each user to variant A (control) or B (test)
+    variant = random.choice(["A", "B"])
     users.append({
         "user_id": user_id,
         "signup_date": signup_date.date(),
         "plan": plan,
-        "country": random.choice(COUNTRIES)
+        "country": random.choice(COUNTRIES),
+        "variant": variant
     })
 users_df = pd.DataFrame(users)
 
@@ -42,8 +45,9 @@ for u in users:
                     "event_time": signup_dt, "feature_name": ""})
     event_id += 1
 
-    # 75% log in at least once shortly after signup
-    if random.random() < 0.75:
+    # Variant B (new onboarding) has a higher login conversion rate: 85% vs 70%
+    login_probability = 0.85 if u["variant"] == "B" else 0.70
+    if random.random() < login_probability:
         login_time = signup_dt + timedelta(hours=random.randint(1, 48))
         events.append({"event_id": event_id, "user_id": u["user_id"], "event_type": "login",
                         "event_time": login_time, "feature_name": ""})
