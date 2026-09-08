@@ -1,49 +1,47 @@
 # SaaS Analytics with ClickHouse & dbt
 
-A hands-on analytics engineering portfolio project simulating a SaaS product's
-data stack: synthetic event/user/subscription data, analytical SQL in
-ClickHouse, dbt transformations, and a Power BI dashboard.
+This project was built to simulate a real-world analytics environment. By generating a synthetic, yet realistic SaaS dataset using Python, the goal is to demonstrate an end-to-end data pipeline. It bridges the gap between raw event data and actionable business insights, showcasing advanced SQL optimizations in ClickHouse, structured data modeling in dbt, and high-level metric visualization in Power BI.
 
 ## 🎯 Project Goals
 
-This project demonstrates practical SQL and analytics engineering skills
-commonly used in product/growth analytics roles:
+Demonstrates core analytics engineering skills used in product/growth roles:
 - Funnel and churn analysis
 - Time-series comparisons (MoM, YoY)
 - ClickHouse-specific functions and optimizations
 - dbt modeling best practices (staging → fact tables)
-- BI dashboarding on top of a modeled warehouse
+- BI dashboarding on a modeled warehouse
 
 ## 🛠️ Tech Stack
 
-- **ClickHouse** — columnar OLAP database, running locally via Docker
-- **Python** — synthetic data generation (pandas, Faker) and data loading (clickhouse-connect)
-- **dbt** — data transformation and modeling *(coming soon)*
-- **Power BI** — dashboarding *(coming soon)*
+- **ClickHouse** — OLAP database (local via Docker)
+- **Python** — Data generation (pandas, Faker) & loading (clickhouse-connect)
+- **dbt** — Data transformation *(coming soon)*
+- **Power BI** — Dashboarding *(coming soon)*
 
 ## 📊 Data Model
 
-Three core tables simulating a SaaS product:
+Core tables simulating a SaaS product:
 
 | Table | Description |
 |---|---|
 | `users` | User accounts: signup date, plan, country |
-| `events` | Product usage events: signup, login, feature_use |
+| `events` | Product usage: signup, login, feature_use |
 | `subscriptions` | Subscription history: plan, MRR, start/end dates |
 
-Data is synthetic but designed to have realistic patterns baked in: funnel
-drop-off, churn correlated with engagement, and seasonal activity.
+*Note: Features realistic synthetic patterns like funnel drop-offs, engagement-correlated churn, and seasonality.*
 
 ## 📁 Repository Structure
 
+```text
 saas-analytics-clickhouse-dbt/
-├── data/ # Generated synthetic CSVs
-├── sql/ # Exploratory & analytical SQL queries
-├── dbt/ # dbt project (staging + fact models)
-├── powerbi/ # Power BI dashboard file
+├── data/              # Generated synthetic CSVs
+├── sql/               # Exploratory & analytical SQL queries
+├── dbt/               # dbt project (staging + fact models)
+├── powerbi/           # Power BI dashboard file
 ├── docker-compose.yml # Local ClickHouse setup
-├── generate_data.py # Synthetic data generator
-└── load_data.py # Loads CSVs into ClickHouse
+├── generate_data.py   # Synthetic data generator
+└── load_data.py       # Loads CSVs into ClickHouse
+```
 
 
 ## 🚀 Getting Started
