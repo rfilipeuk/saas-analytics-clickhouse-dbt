@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: saas_analytics   # the actual ClickHouse database our raw tables live in
+    tables:
+      - name: users
+      - name: events
+      - name: subscriptions
