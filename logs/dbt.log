@@ -1,0 +1,32 @@
+[0m15:26:07.193896 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe95e6ee890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe95fae4b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe95fae51e0>]}
+
+
+============================== 15:26:07.213204 | 49830f36-5ddb-4d5a-8cb2-b570573bd9ea ==============================
+[0m15:26:07.213204 [info ] [MainThread]: Running with dbt=1.11.15
+[0m15:26:07.215226 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'quiet': 'False', 'log_path': 'logs', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'log_format': 'default', 'empty': 'False', 'target_path': 'None', 'printer_width': '80', 'indirect_selection': 'eager', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'use_experimental_parser': 'False', 'debug': 'False', 'write_json': 'True', 'fail_fast': 'False', 'introspect': 'True', 'profiles_dir': '/Users/filiperaissa/.dbt', 'static_parser': 'True', 'invocation_command': 'dbt run --select fct_churn_risk', 'no_print': 'None', 'version_check': 'True'}
+[0m15:26:07.217917 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/filiperaissa/Desktop/Portfolio /saas-analytics-clickhouse-dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m15:26:07.225405 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.23054817, "process_in_blocks": "0", "process_kernel_time": 0.506834, "process_mem_max_rss": "95670272", "process_out_blocks": "0", "process_user_time": 2.514653}
+[0m15:26:07.226956 [debug] [MainThread]: Command `dbt run` failed at 15:26:07.226537 after 0.23 seconds
+[0m15:26:07.228358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe95e6ee890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe95fae4190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe95fae4df0>]}
+[0m15:26:07.229268 [debug] [MainThread]: Flushing usage events
+[0m15:26:07.671575 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:27:23.015223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80b54d2890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80b6c48b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80b6c491e0>]}
+
+
+============================== 15:27:23.033014 | a1cd43d0-a790-45d8-b215-05daf06c6752 ==============================
+[0m15:27:23.033014 [info ] [MainThread]: Running with dbt=1.11.15
+[0m15:27:23.034952 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'fail_fast': 'False', 'quiet': 'False', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'log_path': 'logs', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'introspect': 'True', 'printer_width': '80', 'warn_error': 'None', 'no_print': 'None', 'empty': 'False', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'debug': 'False', 'version_check': 'True', 'static_parser': 'True', 'write_json': 'True', 'profiles_dir': '/Users/filiperaissa/.dbt', 'invocation_command': 'dbt run --select fct_churn_risk'}
+[0m15:27:23.036725 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/filiperaissa/Desktop/Portfolio /saas-analytics-clickhouse-dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m15:27:23.042873 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.25906023, "process_in_blocks": "0", "process_kernel_time": 0.997647, "process_mem_max_rss": "96215040", "process_out_blocks": "0", "process_user_time": 4.250719}
+[0m15:27:23.044336 [debug] [MainThread]: Command `dbt run` failed at 15:27:23.044037 after 0.26 seconds
+[0m15:27:23.045287 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80b54d2890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80b6c48190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80b6c48df0>]}
+[0m15:27:23.046224 [debug] [MainThread]: Flushing usage events
+[0m15:27:23.455651 [debug] [MainThread]: An error was encountered while trying to flush usage events
