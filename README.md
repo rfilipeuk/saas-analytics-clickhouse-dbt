@@ -76,6 +76,23 @@ the ClickHouse-specific functions used.
 | `07_group_array.sql` | Per-user event sequences | `groupArray()` |
 | `08_cascading_ctes.sql` | At-risk user detection | Stacked/cascading CTEs |
 | `09_date_filters.sql` | Relative vs. fixed date filtering | `now()`, `INTERVAL`, `toDateTime` |
+| `10_group_and_rank.sql` | Top features by plan | `GROUP BY`, `ORDER BY ... DESC` |
+| `11_joins.sql` | JOIN types comparison | `INNER JOIN`, `LEFT JOIN` |
+| `12_add_variant_column.sql` | Schema evolution | `ALTER TABLE ADD COLUMN` |
+| `13_ab_test.sql` | A/B test analysis | `uniqExactIf`, split CTEs |
+
+## 🔧 ClickHouse Functions & `-If` Combinators Used
+
+Rather than a single dedicated file, these appear throughout the project's
+queries — a more realistic reflection of how they're actually used:
+
+- **Conditional aggregation (`-If` combinators):** `countIf`, `uniqIf`,
+  `uniqExactIf`, `sumIf` — ClickHouse's idiomatic alternative to `CASE WHEN`
+  inside aggregate functions.
+- **Date/time functions:** `toStartOfMonth`, `toDate`, `now()`, `INTERVAL`,
+  `dateDiff`, `addMonths`, `addDays`.
+- **Array functions:** `arrayJoin`, `arrayMap`, `range`, `groupArray`.
+- **Null handling:** `nullIf`, `coalesce`.
 
 ## 🧠 Notable Learnings & Trade-offs
 
@@ -87,13 +104,17 @@ the ClickHouse-specific functions used.
   production systems would use pre-aggregated tables or Materialized Views instead.
 - ClickHouse has no native `generate_series` — date spines are built with
   `arrayJoin(arrayMap(...))`.
+  - In ClickHouse, `LEFT JOIN` on non-nullable numeric columns (e.g. `UInt32`)
+  returns `0` for unmatched rows, not `NULL` — filtering for "no match" needs
+  `WHERE col = 0`, not `WHERE col IS NULL`.
+- `ALTER TABLE ADD COLUMN` only changes the schema — it doesn't backfill or
+  remove old rows, so schema changes on an already-loaded table can require
+  a `TRUNCATE` + reload to avoid duplicate/stale data.
 
 ## 🔜 Coming Next
 
 - [ ] dbt models (staging → fact layer)
 - [ ] Power BI dashboard
-- [ ] A/B test analysis
-- [ ] Complex aggregations (grouping + decreasing sets)
 
 ---
 *Built step-by-step as a learning project — commits reflect incremental progress.*
